@@ -5,20 +5,34 @@ from .xml_style import XMLDataset
 
 @DATASETS.register_module()
 class VOCDataset(XMLDataset):
-    """Dataset for PASCAL VOC."""
+    # """Dataset for PASCAL VOC."""
+
+    # METAINFO = {
+    #     'classes':
+    #     ('aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car', 'cat',
+    #      'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike', 'person',
+    #      'pottedplant', 'sheep', 'sofa', 'train', 'tvmonitor'),
+    #     # palette is a list of color tuples, which is used for visualization.
+    #     'palette': [(106, 0, 228), (119, 11, 32), (165, 42, 42), (0, 0, 192),
+    #                 (197, 226, 255), (0, 60, 100), (0, 0, 142), (255, 77, 255),
+    #                 (153, 69, 1), (120, 166, 157), (0, 182, 199),
+    #                 (0, 226, 252), (182, 182, 255), (0, 0, 230), (220, 20, 60),
+    #                 (163, 255, 0), (0, 82, 0), (3, 95, 161), (0, 80, 100),
+    #                 (183, 130, 88)]
+    # }
+
+
+    """Dataset for NWPU VHR-10."""
 
     METAINFO = {
         'classes':
-        ('aeroplane', 'bicycle', 'bird', 'boat', 'bottle', 'bus', 'car', 'cat',
-         'chair', 'cow', 'diningtable', 'dog', 'horse', 'motorbike', 'person',
-         'pottedplant', 'sheep', 'sofa', 'train', 'tvmonitor'),
+            ('airplane', 'ship', 'storagetank', 'baseball', 'tenniscourt',
+             'basketball', 'groundtrackfield', 'harbor', 'bridge', 'vehicle'),
+
         # palette is a list of color tuples, which is used for visualization.
-        'palette': [(106, 0, 228), (119, 11, 32), (165, 42, 42), (0, 0, 192),
-                    (197, 226, 255), (0, 60, 100), (0, 0, 142), (255, 77, 255),
-                    (153, 69, 1), (120, 166, 157), (0, 182, 199),
-                    (0, 226, 252), (182, 182, 255), (0, 0, 230), (220, 20, 60),
-                    (163, 255, 0), (0, 82, 0), (3, 95, 161), (0, 80, 100),
-                    (183, 130, 88)]
+        'palette':
+            [(220, 20, 60), (119, 11, 32), (0, 0, 142), (0, 0, 230), (106, 0, 228),
+             (0, 60, 100), (0, 80, 100), (0, 0, 70), (0, 0, 192), (250, 170, 30)]
     }
 
     def __init__(self, **kwargs):
